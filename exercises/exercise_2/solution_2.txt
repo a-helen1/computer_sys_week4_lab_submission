@@ -1,0 +1,15 @@
+Exercise 2
+
+A- MAC addresses
+
+	eth1 on dbserver 08:00:27:bd:2b:d3
+	host machine MAC address 0A:00:27:00:00:05
+
+B- Command to only show responses form the from dbserver using its MAC address. 
+   MAC_filter.sh takes in a MAC address and a pcap file name. Only responses from the required MAC address returned to the MAC_filter_results.txt file. 
+
+	tshark -r /vagrant/webserver-eth1-traffic2.pcap -Y "eth.src==08:00:27:bd:2b:d3" -T fields -e eth
+
+Refrences
+
+Wireshark 2019, 6.4 Building Display Filter Expressions, viewed 28 Sept 2019, https://www.wireshark.org/docs/wsug_html_chunked/ChWorkBuildDisplayFilterSection.html.

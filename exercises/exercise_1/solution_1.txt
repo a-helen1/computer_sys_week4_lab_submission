@@ -1,0 +1,4 @@
+Exercise 1
+
+Write the ip addresses of the HTTP responses to ip_addresses.txt
+	tshark -r  /vagrant/webserver-eth0-traffic4.pcap -Y http.response -T fields -e http.host -e ip.src  | sort | uniq -c | sort -n  >/vagrant/ip_addresses.txt
